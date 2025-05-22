@@ -1,0 +1,140 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  max-width: 320px;
+  margin: 1rem;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.imageContainer {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.productCard:hover .productImage {
+  transform: scale(1.05);
+}
+
+.discountBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff3e3e;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.productInfo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.productName {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.productDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.productColor,
+.productType,
+.productGender {
+  display: inline-block;
+}
+
+.productGender::before,
+.productType::before {
+  content: "•";
+  margin: 0 4px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.categoryTag {
+  background-color: #f0f0f0;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.priceContainer {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.originalPrice {
+  font-size: 0.9rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.finalPrice {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.addToCartButton {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.addToCartButton:hover {
+  background-color: #3a7bc8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .productCard {
+    max-width: 100%;
+  }
+  
+  .imageContainer {
+    height: 200px;
+  }
+}

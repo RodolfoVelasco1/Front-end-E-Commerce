@@ -1,0 +1,22 @@
+.adminContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw; /* Asegura que ocupe todo el ancho */
+  height: 100vh; /* Opcional: toda la altura */
+}
+
+.sidebar {
+  width: 100%;
+}
+
+.sidebar h1 {
+  margin-top: 80px; /* Ajusta según la altura del navbar */
+  text-align: center; /* Centra el texto */
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+

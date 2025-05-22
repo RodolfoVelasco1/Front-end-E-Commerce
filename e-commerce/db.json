@@ -1,0 +1,1234 @@
+{
+  "paises": [
+    {
+      "id": 1,
+      "nombre": "Argentina"
+    },
+    {
+      "id": 2,
+      "nombre": "Chile"
+    },
+    {
+      "id": 3,
+      "nombre": "Brasil"
+    }
+  ],
+  "provincias": [
+    {
+      "id": 1,
+      "nombre": "Buenos Aires",
+      "pais": {
+        "id": 1,
+        "nombre": "Argentina"
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Córdoba",
+      "pais": {
+        "id": 1,
+        "nombre": "Argentina"
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Santiago",
+      "pais": {
+        "id": 2,
+        "nombre": "Chile"
+      }
+    }
+  ],
+  "localidades": [
+    {
+      "id": 1,
+      "nombre": "La Plata",
+      "codigoPostal": 1900,
+      "provincia": {
+        "id": 1,
+        "nombre": "Buenos Aires",
+        "pais": {
+          "id": 1,
+          "nombre": "Argentina"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Villa Carlos Paz",
+      "codigoPostal": 5152,
+      "provincia": {
+        "id": 2,
+        "nombre": "Córdoba",
+        "pais": {
+          "id": 1,
+          "nombre": "Argentina"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Providencia",
+      "codigoPostal": 7500,
+      "provincia": {
+        "id": 3,
+        "nombre": "Santiago",
+        "pais": {
+          "id": 2,
+          "nombre": "Chile"
+        }
+      }
+    }
+  ],
+  "direcciones": [
+    {
+      "id": 1,
+      "domicilio": "Calle Falsa 123",
+      "casa": "2A",
+      "localidad": {
+        "id": 1,
+        "nombre": "La Plata",
+        "codigoPostal": 1900,
+        "provincia": {
+          "id": 1,
+          "nombre": "Buenos Aires",
+          "pais": {
+            "id": 1,
+            "nombre": "Argentina"
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "domicilio": "Avenida Siempreviva 742",
+      "casa": "PB",
+      "localidad": {
+        "id": 2,
+        "nombre": "Villa Carlos Paz",
+        "codigoPostal": 5152,
+        "provincia": {
+          "id": 2,
+          "nombre": "Córdoba",
+          "pais": {
+            "id": 1,
+            "nombre": "Argentina"
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "domicilio": "Avenida Principal 555",
+      "casa": "3C",
+      "localidad": {
+        "id": 3,
+        "nombre": "Providencia",
+        "codigoPostal": 7500,
+        "provincia": {
+          "id": 3,
+          "nombre": "Santiago",
+          "pais": {
+            "id": 2,
+            "nombre": "Chile"
+          }
+        }
+      }
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "dni": 30123456,
+      "username": "jperez",
+      "password": "hashedPassword1",
+      "rol": "USER",
+      "direccion": {
+        "id": 1,
+        "domicilio": "Calle Falsa 123",
+        "casa": "2A",
+        "localidad": {
+          "id": 1,
+          "nombre": "La Plata",
+          "codigoPostal": 1900,
+          "provincia": {
+            "id": 1,
+            "nombre": "Buenos Aires",
+            "pais": {
+              "id": 1,
+              "nombre": "Argentina"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "María",
+      "apellido": "González",
+      "dni": 32654321,
+      "username": "mgonzalez",
+      "password": "hashedPassword2",
+      "rol": "ADMIN",
+      "direccion": {
+        "id": 2,
+        "domicilio": "Avenida Siempreviva 742",
+        "casa": "PB",
+        "localidad": {
+          "id": 2,
+          "nombre": "Villa Carlos Paz",
+          "codigoPostal": 5152,
+          "provincia": {
+            "id": 2,
+            "nombre": "Córdoba",
+            "pais": {
+              "id": 1,
+              "nombre": "Argentina"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "nombre": "Urbano"
+    },
+    {
+      "id": 2,
+      "nombre": "Deportivo"
+    },
+    {
+      "id": 3,
+      "nombre": "Formal"
+    },
+    {
+      "id": 4,
+      "nombre": "Casual"
+    }
+  ],
+  "descuentos": [
+    {
+      "id": 1,
+      "nombre": "Oferta Verano",
+      "fechaInicio": "2025-01-01T00:00:00Z",
+      "fechaFin": "2025-03-31T23:59:59Z",
+      "porcentaje": 20
+    },
+    {
+      "id": 2,
+      "nombre": "Hot Sale",
+      "fechaInicio": "2025-05-10T00:00:00Z",
+      "fechaFin": "2025-05-17T23:59:59Z",
+      "porcentaje": 30
+    },
+    {
+      "id": 3,
+      "nombre": "Black Friday",
+      "fechaInicio": "2025-11-27T00:00:00Z",
+      "fechaFin": "2025-11-30T23:59:59Z",
+      "porcentaje": 40
+    }
+  ],
+  "talles": [
+    {
+      "id": 1,
+      "name": "S"
+    },
+    {
+      "id": 2,
+      "name": "M"
+    },
+    {
+      "id": 3,
+      "name": "L"
+    },
+    {
+      "id": 4,
+      "name": "XL"
+    },
+    {
+      "id": 5,
+      "name": "38"
+    },
+    {
+      "id": 6,
+      "name": "39"
+    },
+    {
+      "id": 7,
+      "name": "40"
+    },
+    {
+      "id": 8,
+      "name": "41"
+    },
+    {
+      "id": 9,
+      "name": "42"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Remera básica",
+      "sexo": "UNISEX",
+      "precio_compra": 2500,
+      "precio_venta": 5000,
+      "tipoProducto": "ROPA",
+      "categorias": [
+        {
+          "id": 1,
+          "nombre": "Urbano"
+        },
+        {
+          "id": 4,
+          "nombre": "Casual"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Pantalón de jean",
+      "sexo": "UNISEX",
+      "precio_compra": 8000,
+      "precio_venta": 15000,
+      "tipoProducto": "ROPA",
+      "categorias": [
+        {
+          "id": 1,
+          "nombre": "Urbano"
+        },
+        {
+          "id": 4,
+          "nombre": "Casual"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Zapatillas deportivas",
+      "sexo": "UNISEX",
+      "precio_compra": 12000,
+      "precio_venta": 24000,
+      "tipoProducto": "CALZADO",
+      "categorias": [
+        {
+          "id": 1,
+          "nombre": "Urbano"
+        },
+        {
+          "id": 2,
+          "nombre": "Deportivo"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Camisa formal",
+      "sexo": "MASCULINO",
+      "precio_compra": 7000,
+      "precio_venta": 14000,
+      "tipoProducto": "ROPA",
+      "categorias": [
+        {
+          "id": 3,
+          "nombre": "Formal"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "Vestido elegante",
+      "sexo": "FEMENINO",
+      "precio_compra": 9000,
+      "precio_venta": 18000,
+      "tipoProducto": "ROPA",
+      "categorias": [
+        {
+          "id": 3,
+          "nombre": "Formal"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nombre": "Reloj minimalista",
+      "sexo": "UNISEX",
+      "precio_compra": 5000,
+      "precio_venta": 10000,
+      "tipoProducto": "ACCESORIO",
+      "categorias": [
+        {
+          "id": 3,
+          "nombre": "Formal"
+        },
+        {
+          "id": 4,
+          "nombre": "Casual"
+        }
+      ]
+    }
+  ],
+  "imagenes": [
+    {
+      "id": 1,
+      "url": "https://example.com/images/remera-blanca.jpg",
+      "alt": "Remera blanca básica"
+    },
+    {
+      "id": 2,
+      "url": "https://example.com/images/remera-negra.jpg",
+      "alt": "Remera negra básica"
+    },
+    {
+      "id": 3,
+      "url": "https://example.com/images/jean-azul.jpg",
+      "alt": "Pantalón jean azul clásico"
+    },
+    {
+      "id": 4,
+      "url": "https://example.com/images/jean-negro.jpg",
+      "alt": "Pantalón jean negro"
+    },
+    {
+      "id": 5,
+      "url": "https://example.com/images/zapatillas-blancas.jpg",
+      "alt": "Zapatillas deportivas blancas"
+    },
+    {
+      "id": 6,
+      "url": "https://example.com/images/zapatillas-negras.jpg",
+      "alt": "Zapatillas deportivas negras"
+    },
+    {
+      "id": 7,
+      "url": "https://example.com/images/camisa-blanca.jpg",
+      "alt": "Camisa formal blanca"
+    },
+    {
+      "id": 8,
+      "url": "https://example.com/images/vestido-negro.jpg",
+      "alt": "Vestido elegante negro"
+    },
+    {
+      "id": 9,
+      "url": "https://example.com/images/reloj-plateado.jpg",
+      "alt": "Reloj minimalista plateado"
+    },
+    {
+      "id": 10,
+      "url": "https://example.com/images/reloj-dorado.jpg",
+      "alt": "Reloj minimalista dorado"
+    }
+  ],
+  "stocks": [
+    {
+      "id": 1,
+      "stock": 30,
+      "talle": {
+        "id": 1,
+        "name": "S"
+      }
+    },
+    {
+      "id": 2,
+      "stock": 25,
+      "talle": {
+        "id": 2,
+        "name": "M"
+      }
+    },
+    {
+      "id": 3,
+      "stock": 20,
+      "talle": {
+        "id": 3,
+        "name": "L"
+      }
+    },
+    {
+      "id": 4,
+      "stock": 15,
+      "talle": {
+        "id": 4,
+        "name": "XL"
+      }
+    },
+    {
+      "id": 5,
+      "stock": 8,
+      "talle": {
+        "id": 5,
+        "name": "38"
+      }
+    },
+    {
+      "id": 6,
+      "stock": 12,
+      "talle": {
+        "id": 6,
+        "name": "39"
+      }
+    },
+    {
+      "id": 7,
+      "stock": 15,
+      "talle": {
+        "id": 7,
+        "name": "40"
+      }
+    },
+    {
+      "id": 8,
+      "stock": 10,
+      "talle": {
+        "id": 8,
+        "name": "41"
+      }
+    },
+    {
+      "id": 9,
+      "stock": 5,
+      "talle": {
+        "id": 9,
+        "name": "42"
+      }
+    }
+  ],
+  "detallesProductos": [
+    {
+      "id": 1,
+      "color": "Blanco",
+      "activo": true,
+      "producto": {
+        "id": 1,
+        "nombre": "Remera básica",
+        "sexo": "UNISEX",
+        "precio_compra": 2500,
+        "precio_venta": 5000,
+        "tipoProducto": "ROPA",
+        "categorias": [
+          {
+            "id": 1,
+            "nombre": "Urbano"
+          },
+          {
+            "id": 4,
+            "nombre": "Casual"
+          }
+        ]
+      },
+      "descuento": {
+        "id": 1,
+        "nombre": "Oferta Verano",
+        "fechaInicio": "2025-01-01T00:00:00Z",
+        "fechaFin": "2025-03-31T23:59:59Z",
+        "porcentaje": 20
+      },
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://example.com/images/remera-blanca.jpg",
+          "alt": "Remera blanca básica"
+        }
+      ],
+      "stocks": [
+        {
+          "id": 1,
+          "stock": 30,
+          "talle": {
+            "id": 1,
+            "name": "S"
+          }
+        },
+        {
+          "id": 2,
+          "stock": 25,
+          "talle": {
+            "id": 2,
+            "name": "M"
+          }
+        },
+        {
+          "id": 3,
+          "stock": 20,
+          "talle": {
+            "id": 3,
+            "name": "L"
+          }
+        },
+        {
+          "id": 4,
+          "stock": 15,
+          "talle": {
+            "id": 4,
+            "name": "XL"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "color": "Negro",
+      "activo": true,
+      "producto": {
+        "id": 1,
+        "nombre": "Remera básica",
+        "sexo": "UNISEX",
+        "precio_compra": 2500,
+        "precio_venta": 5000,
+        "tipoProducto": "ROPA",
+        "categorias": [
+          {
+            "id": 1,
+            "nombre": "Urbano"
+          },
+          {
+            "id": 4,
+            "nombre": "Casual"
+          }
+        ]
+      },
+      "descuento": null,
+      "imagenes": [
+        {
+          "id": 2,
+          "url": "https://example.com/images/remera-negra.jpg",
+          "alt": "Remera negra básica"
+        }
+      ],
+      "stocks": [
+        {
+          "id": 1,
+          "stock": 30,
+          "talle": {
+            "id": 1,
+            "name": "S"
+          }
+        },
+        {
+          "id": 2,
+          "stock": 25,
+          "talle": {
+            "id": 2,
+            "name": "M"
+          }
+        },
+        {
+          "id": 3,
+          "stock": 20,
+          "talle": {
+            "id": 3,
+            "name": "L"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "color": "Azul",
+      "activo": true,
+      "producto": {
+        "id": 2,
+        "nombre": "Pantalón de jean",
+        "sexo": "UNISEX",
+        "precio_compra": 8000,
+        "precio_venta": 15000,
+        "tipoProducto": "ROPA",
+        "categorias": [
+          {
+            "id": 1,
+            "nombre": "Urbano"
+          },
+          {
+            "id": 4,
+            "nombre": "Casual"
+          }
+        ]
+      },
+      "descuento": {
+        "id": 1,
+        "nombre": "Oferta Verano",
+        "fechaInicio": "2025-01-01T00:00:00Z",
+        "fechaFin": "2025-03-31T23:59:59Z",
+        "porcentaje": 20
+      },
+      "imagenes": [
+        {
+          "id": 3,
+          "url": "https://example.com/images/jean-azul.jpg",
+          "alt": "Pantalón jean azul clásico"
+        }
+      ],
+      "stocks": [
+        {
+          "id": 1,
+          "stock": 30,
+          "talle": {
+            "id": 1,
+            "name": "S"
+          }
+        },
+        {
+          "id": 2,
+          "stock": 25,
+          "talle": {
+            "id": 2,
+            "name": "M"
+          }
+        },
+        {
+          "id": 3,
+          "stock": 20,
+          "talle": {
+            "id": 3,
+            "name": "L"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "color": "Blanco",
+      "activo": true,
+      "producto": {
+        "id": 3,
+        "nombre": "Zapatillas deportivas",
+        "sexo": "UNISEX",
+        "precio_compra": 12000,
+        "precio_venta": 24000,
+        "tipoProducto": "CALZADO",
+        "categorias": [
+          {
+            "id": 1,
+            "nombre": "Urbano"
+          },
+          {
+            "id": 2,
+            "nombre": "Deportivo"
+          }
+        ]
+      },
+      "descuento": {
+        "id": 2,
+        "nombre": "Hot Sale",
+        "fechaInicio": "2025-05-10T00:00:00Z",
+        "fechaFin": "2025-05-17T23:59:59Z",
+        "porcentaje": 30
+      },
+      "imagenes": [
+        {
+          "id": 5,
+          "url": "https://example.com/images/zapatillas-blancas.jpg",
+          "alt": "Zapatillas deportivas blancas"
+        }
+      ],
+      "stocks": [
+        {
+          "id": 5,
+          "stock": 8,
+          "talle": {
+            "id": 5,
+            "name": "38"
+          }
+        },
+        {
+          "id": 6,
+          "stock": 12,
+          "talle": {
+            "id": 6,
+            "name": "39"
+          }
+        },
+        {
+          "id": 7,
+          "stock": 15,
+          "talle": {
+            "id": 7,
+            "name": "40"
+          }
+        },
+        {
+          "id": 8,
+          "stock": 10,
+          "talle": {
+            "id": 8,
+            "name": "41"
+          }
+        },
+        {
+          "id": 9,
+          "stock": 5,
+          "talle": {
+            "id": 9,
+            "name": "42"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "color": "Plateado",
+      "activo": true,
+      "producto": {
+        "id": 6,
+        "nombre": "Reloj minimalista",
+        "sexo": "UNISEX",
+        "precio_compra": 5000,
+        "precio_venta": 10000,
+        "tipoProducto": "ACCESORIO",
+        "categorias": [
+          {
+            "id": 3,
+            "nombre": "Formal"
+          },
+          {
+            "id": 4,
+            "nombre": "Casual"
+          }
+        ]
+      },
+      "descuento": null,
+      "imagenes": [
+        {
+          "id": 9,
+          "url": "https://example.com/images/reloj-plateado.jpg",
+          "alt": "Reloj minimalista plateado"
+        }
+      ],
+      "stocks": [
+        {
+          "id": 1,
+          "stock": 20,
+          "talle": {
+            "id": 1,
+            "name": "S"
+          }
+        }
+      ]
+    }
+  ],
+  "ordenesCompra": [
+    {
+      "id": 1,
+      "usuario": {
+        "id": 1,
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "dni": 30123456,
+        "username": "jperez",
+        "rol": "USER",
+        "direccion": {
+          "id": 1,
+          "domicilio": "Calle Falsa 123",
+          "casa": "2A",
+          "localidad": {
+            "id": 1,
+            "nombre": "La Plata",
+            "codigoPostal": 1900,
+            "provincia": {
+              "id": 1,
+              "nombre": "Buenos Aires",
+              "pais": {
+                "id": 1,
+                "nombre": "Argentina"
+              }
+            }
+          }
+        }
+      },
+      "fecha_compra": "2025-03-10T15:30:00Z",
+      "total": 20000
+    },
+    {
+      "id": 2,
+      "usuario": {
+        "id": 1,
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "dni": 30123456,
+        "username": "jperez",
+        "rol": "USER",
+        "direccion": {
+          "id": 1,
+          "domicilio": "Calle Falsa 123",
+          "casa": "2A",
+          "localidad": {
+            "id": 1,
+            "nombre": "La Plata",
+            "codigoPostal": 1900,
+            "provincia": {
+              "id": 1,
+              "nombre": "Buenos Aires",
+              "pais": {
+                "id": 1,
+                "nombre": "Argentina"
+              }
+            }
+          }
+        }
+      },
+      "fecha_compra": "2025-04-15T10:45:00Z",
+      "total": 15000
+    },
+    {
+      "id": 3,
+      "usuario": {
+        "id": 2,
+        "nombre": "María",
+        "apellido": "González",
+        "dni": 32654321,
+        "username": "mgonzalez",
+        "rol": "ADMIN",
+        "direccion": {
+          "id": 2,
+          "domicilio": "Avenida Siempreviva 742",
+          "casa": "PB",
+          "localidad": {
+            "id": 2,
+            "nombre": "Villa Carlos Paz",
+            "codigoPostal": 5152,
+            "provincia": {
+              "id": 2,
+              "nombre": "Córdoba",
+              "pais": {
+                "id": 1,
+                "nombre": "Argentina"
+              }
+            }
+          }
+        }
+      },
+      "fecha_compra": "2025-05-01T18:20:00Z",
+      "total": 34000
+    }
+  ],
+  "detallesOrdenCompra": [
+    {
+      "id": 1,
+      "detalleProducto": {
+        "id": 1,
+        "color": "Blanco",
+        "activo": true,
+        "producto": {
+          "id": 1,
+          "nombre": "Remera básica",
+          "sexo": "UNISEX",
+          "precio_compra": 2500,
+          "precio_venta": 5000,
+          "tipoProducto": "ROPA",
+          "categorias": [
+            {
+              "id": 1,
+              "nombre": "Urbano"
+            },
+            {
+              "id": 4,
+              "nombre": "Casual"
+            }
+          ]
+        },
+        "descuento": {
+          "id": 1,
+          "nombre": "Oferta Verano",
+          "fechaInicio": "2025-01-01T00:00:00Z",
+          "fechaFin": "2025-03-31T23:59:59Z",
+          "porcentaje": 20
+        },
+        "imagenes": [
+          {
+            "id": 1,
+            "url": "https://example.com/images/remera-blanca.jpg",
+            "alt": "Remera blanca básica"
+          }
+        ],
+        "stocks": [
+          {
+            "id": 2,
+            "stock": 25,
+            "talle": {
+              "id": 2,
+              "name": "M"
+            }
+          }
+        ]
+      },
+      "ordenCompra": {
+        "id": 1,
+        "usuario": {
+          "id": 1,
+          "nombre": "Juan",
+          "apellido": "Pérez",
+          "dni": 30123456,
+          "username": "jperez",
+          "rol": "USER",
+          "direccion": {
+            "id": 1,
+            "domicilio": "Calle Falsa 123",
+            "casa": "2A",
+            "localidad": {
+              "id": 1,
+              "nombre": "La Plata",
+              "codigoPostal": 1900,
+              "provincia": {
+                "id": 1,
+                "nombre": "Buenos Aires",
+                "pais": {
+                  "id": 1,
+                  "nombre": "Argentina"
+                }
+              }
+            }
+          }
+        },
+        "fecha_compra": "2025-03-10T15:30:00Z",
+        "total": 20000
+      },
+      "cantidad": 2
+    },
+    {
+      "id": 2,
+      "detalleProducto": {
+        "id": 3,
+        "color": "Azul",
+        "activo": true,
+        "producto": {
+          "id": 2,
+          "nombre": "Pantalón de jean",
+          "sexo": "UNISEX",
+          "precio_compra": 8000,
+          "precio_venta": 15000,
+          "tipoProducto": "ROPA",
+          "categorias": [
+            {
+              "id": 1,
+              "nombre": "Urbano"
+            },
+            {
+              "id": 4,
+              "nombre": "Casual"
+            }
+          ]
+        },
+        "descuento": {
+          "id": 1,
+          "nombre": "Oferta Verano",
+          "fechaInicio": "2025-01-01T00:00:00Z",
+          "fechaFin": "2025-03-31T23:59:59Z",
+          "porcentaje": 20
+        },
+        "imagenes": [
+          {
+            "id": 3,
+            "url": "https://example.com/images/jean-azul.jpg",
+            "alt": "Pantalón jean azul clásico"
+          }
+        ],
+        "stocks": [
+          {
+            "id": 2,
+            "stock": 25,
+            "talle": {
+              "id": 2,
+              "name": "M"
+            }
+          }
+        ]
+      },
+      "ordenCompra": {
+        "id": 1,
+        "usuario": {
+          "id": 1,
+          "nombre": "Juan",
+          "apellido": "Pérez",
+          "dni": 30123456,
+          "username": "jperez",
+          "rol": "USER",
+          "direccion": {
+            "id": 1,
+            "domicilio": "Calle Falsa 123",
+            "casa": "2A",
+            "localidad": {
+              "id": 1,
+              "nombre": "La Plata",
+              "codigoPostal": 1900,
+              "provincia": {
+                "id": 1,
+                "nombre": "Buenos Aires",
+                "pais": {
+                  "id": 1,
+                  "nombre": "Argentina"
+                }
+              }
+            }
+          }
+        },
+        "fecha_compra": "2025-03-10T15:30:00Z",
+        "total": 20000
+      },
+      "cantidad": 1
+    },
+    {
+      "id": 3,
+      "detalleProducto": {
+        "id": 2,
+        "color": "Negro",
+        "activo": true,
+        "producto": {
+          "id": 1,
+          "nombre": "Remera básica",
+          "sexo": "UNISEX",
+          "precio_compra": 2500,
+          "precio_venta": 5000,
+          "tipoProducto": "ROPA",
+          "categorias": [
+            {
+              "id": 1,
+              "nombre": "Urbano"
+            },
+            {
+              "id": 4,
+              "nombre": "Casual"
+            }
+          ]
+        },
+        "descuento": null,
+        "imagenes": [
+          {
+            "id": 2,
+            "url": "https://example.com/images/remera-negra.jpg",
+            "alt": "Remera negra básica"
+          }
+        ],
+        "stocks": [
+          {
+            "id": 1,
+            "stock": 30,
+            "talle": {
+              "id": 1,
+              "name": "S"
+            }
+          }
+        ]
+      },
+      "ordenCompra": {
+        "id": 2,
+        "usuario": {
+          "id": 1,
+          "nombre": "Juan",
+          "apellido": "Pérez",
+          "dni": 30123456,
+          "username": "jperez",
+          "rol": "USER",
+          "direccion": {
+            "id": 1,
+            "domicilio": "Calle Falsa 123",
+            "casa": "2A",
+            "localidad": {
+              "id": 1,
+              "nombre": "La Plata",
+              "codigoPostal": 1900,
+              "provincia": {
+                "id": 1,
+                "nombre": "Buenos Aires",
+                "pais": {
+                  "id": 1,
+                  "nombre": "Argentina"
+                }
+              }
+            }
+          }
+        },
+        "fecha_compra": "2025-04-15T10:45:00Z",
+        "total": 15000
+      },
+      "cantidad": 3
+    },
+    {
+      "id": 4,
+      "detalleProducto": {
+        "id": 4,
+        "color": "Blanco",
+        "activo": true,
+        "producto": {
+          "id": 3,
+          "nombre": "Zapatillas deportivas",
+          "sexo": "UNISEX",
+          "precio_compra": 12000,
+          "precio_venta": 24000,
+          "tipoProducto": "CALZADO",
+          "categorias": [
+            {
+              "id": 1,
+              "nombre": "Urbano"
+            },
+            {
+              "id": 2,
+              "nombre": "Deportivo"
+            }
+          ]
+        },
+        "descuento": {
+          "id": 2,
+          "nombre": "Hot Sale",
+          "fechaInicio": "2025-05-10T00:00:00Z",
+          "fechaFin": "2025-05-17T23:59:59Z",
+          "porcentaje": 30
+        },
+        "imagenes": [
+          {
+            "id": 5,
+            "url": "https://example.com/images/zapatillas-blancas.jpg",
+            "alt": "Zapatillas deportivas blancas"
+          }
+        ],
+        "stocks": [
+          {
+            "id": 7,
+            "stock": 15,
+            "talle": {
+              "id": 7,
+              "name": "40"
+            }
+          }
+        ]
+      },
+      "ordenCompra": {
+        "id": 3,
+        "usuario": {
+          "id": 2,
+          "nombre": "María",
+          "apellido": "González",
+          "dni": 32654321,
+          "username": "mgonzalez",
+          "rol": "ADMIN",
+          "direccion": {
+            "id": 2,
+            "domicilio": "Avenida Siempreviva 742",
+            "casa": "PB",
+            "localidad": {
+              "id": 2,
+              "nombre": "Villa Carlos Paz",
+              "codigoPostal": 5152,
+              "provincia": {
+                "id": 2,
+                "nombre": "Córdoba",
+                "pais": {
+                  "id": 1,
+                  "nombre": "Argentina"
+                }
+              }
+            }
+          }
+        },
+        "fecha_compra": "2025-05-01T18:20:00Z",
+        "total": 34000
+      },
+      "cantidad": 1
+    }
+  ]
+}

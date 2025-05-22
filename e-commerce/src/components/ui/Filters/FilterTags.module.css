@@ -1,0 +1,60 @@
+.filtersContainer {
+  margin-bottom: 1.5rem;
+}
+
+.resultCount {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.activeTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filterTag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  margin-left: 0.5rem;
+  color: #777;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.removeButton:hover {
+  color: #333;
+}
+
+.clearAllButton {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  color: #666;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0.35rem 0;
+  transition: color 0.2s ease;
+}
+
+.clearAllButton:hover {
+  color: #333;
+}

@@ -1,0 +1,58 @@
+.complainsContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100vw; /* Asegura que ocupe todo el ancho */
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+.complainsFormContainer{
+    flex: 1; /* Esto permite que el formulario ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.complainsForm {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre los elementos */
+}
+
+.complainsForm label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.complainsForm input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.complainsForm textarea {
+  height: 100px;
+  resize: none;
+}
+
+.complainsForm button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.complainsForm button:hover {
+  background-color: #0056b3;
+}

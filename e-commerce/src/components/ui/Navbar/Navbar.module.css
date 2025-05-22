@@ -1,0 +1,165 @@
+/* Navbar.module.css */
+
+.navbar {
+  background-color: #ff6347;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.logoLink {
+  text-decoration: none;
+}
+
+.logo {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 75px;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #f0f0f0;
+}
+
+.navLink:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover:after {
+  width: 100%;
+}
+
+.navbarRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  width: 180px;
+  outline: none;
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+
+}
+
+.navbarIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.iconLink {
+  color: white;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.cartIconContainer {
+  position: relative;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: white;
+  color: #ff6347;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbarContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .navLinks {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 15px;
+  }
+  
+  .navLink {
+    font-size: 0.9rem;
+  }
+  
+  .searchInput {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .navbarRight {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .searchInput {
+    width: 100%;
+  }
+}
+

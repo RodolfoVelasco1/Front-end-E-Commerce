@@ -1,0 +1,10 @@
+.infoPageContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100vw; /* Asegura que ocupe todo el ancho */
+    height: 100%; /* Opcional: toda la altura */
+}
+
+.infoContainer{
+    margin: 7%;
+}

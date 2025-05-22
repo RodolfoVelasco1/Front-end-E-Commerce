@@ -1,0 +1,130 @@
+.filtroContainer {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+}
+
+.filtroHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.filtroTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.clearButton {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.clearButton:hover {
+  color: #222;
+}
+
+.filtroSection {
+  margin-bottom: 1.5rem;
+}
+
+.filtroSectionTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 0.75rem;
+}
+
+.filterOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterButton {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.filterButton:hover {
+  background-color: #eaeaea;
+}
+
+.filterButton.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.tallesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.talleButton {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.talleButton:hover {
+  background-color: #eaeaea;
+}
+
+.talleButton.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.precioOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ofertasCheck {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.checkbox {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.loadingTalles {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 0.5rem 0;
+}
