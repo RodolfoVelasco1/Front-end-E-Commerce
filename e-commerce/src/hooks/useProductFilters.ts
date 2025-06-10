@@ -27,7 +27,7 @@ interface Producto {
   sexo: 'MASCULINO' | 'FEMENINO' | 'UNISEX';
   precio_compra: number;
   precio_venta: number;
-  tipoProducto: 'ROPA' | 'CALZADO' | 'ACCESORIO';
+  tipoProducto: 'INDUMENTARIA' | 'CALZADO';
   categorias: Categoria[];
 }
 

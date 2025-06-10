@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { IDetalleProducto } from './types/IDetalleProducto';
 import { ITalle } from './types/ITalle';
-import { ISexo } from './types/iSexo';
+import { ISexo } from './types/ISexo';
 import { ITipoProducto } from './types/ITipoProducto';
 
 
@@ -44,7 +44,7 @@ const mockProducts: IDetalleProducto[] = [
       sexo: ISexo.MASCULINO,
       precio_compra: 15,
       precio_venta: 29.99,
-      tipoProducto: ITipoProducto.ROPA,
+      tipoProducto: ITipoProducto.INDUMENTARIA,
       categorias: [{ id: 1, nombre: 'Remeras' }]
     },
     descuento: null,
@@ -67,7 +67,7 @@ const mockProducts: IDetalleProducto[] = [
       sexo: ISexo.MASCULINO,
       precio_compra: 18,
       precio_venta: 34.99,
-      tipoProducto: ITipoProducto.ROPA,
+      tipoProducto: ITipoProducto.INDUMENTARIA,
       categorias: [{ id: 1, nombre: 'Remeras' }, { id: 2, nombre: 'Deportiva' }]
     },
     descuento: {
@@ -96,7 +96,7 @@ const mockProducts: IDetalleProducto[] = [
       sexo: ISexo.FEMENINO,
       precio_compra: 45,
       precio_venta: 89.99,
-      tipoProducto: ITipoProducto.ROPA,
+      tipoProducto: ITipoProducto.INDUMENTARIA,
       categorias: [{ id: 3, nombre: 'Vestidos' }]
     },
     descuento: null,
@@ -145,19 +145,19 @@ const mockProducts: IDetalleProducto[] = [
     activo: true,
     producto: {
       id: 5,
-      nombre: 'Billetera Cuero',
+      nombre: 'Medias Spider-man',
       sexo: ISexo.MASCULINO,
       precio_compra: 25,
       precio_venta: 49.99,
-      tipoProducto: ITipoProducto.ACCESORIO,
-      categorias: [{ id: 5, nombre: 'Billeteras' }]
+      tipoProducto: ITipoProducto.INDUMENTARIA,
+      categorias: [{ id: 5, nombre: 'Medias' }]
     },
     descuento: null,
     imagenes: [
-      { id: 5, url: '/assets/billetera-marron.jpg', alt: 'Billetera de cuero marrón' }
+      { id: 5, url: '/assets/medias.jpg', alt: 'Medias marrón' }
     ],
     stocks: [
-      { id: 14, stock: 8, talle: { id: 1, name: 'XS' } } // XS como único tamaño para accesorios
+      { id: 14, stock: 8, talle: { id: 1, name: 'XS' } }
     ]
   }
 ];

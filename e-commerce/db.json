@@ -145,7 +145,7 @@
       "username": "jperez",
       "email": "juan.perez@email.com",
       "password": "hashedPassword1",
-      "rol": "USER",
+      "rol": "USUARIO",
       "direccion": {
         "id": 1,
         "domicilio": "Calle Falsa 123",
@@ -280,7 +280,7 @@
       "sexo": "UNISEX",
       "precio_compra": 2500,
       "precio_venta": 5000,
-      "tipoProducto": "ROPA",
+      "tipoProducto": "INDUMENTARIA",
       "categorias": [
         {
           "id": 1,
@@ -298,7 +298,7 @@
       "sexo": "UNISEX",
       "precio_compra": 8000,
       "precio_venta": 15000,
-      "tipoProducto": "ROPA",
+      "tipoProducto": "INDUMENTARIA",
       "categorias": [
         {
           "id": 1,
@@ -334,7 +334,7 @@
       "sexo": "MASCULINO",
       "precio_compra": 7000,
       "precio_venta": 14000,
-      "tipoProducto": "ROPA",
+      "tipoProducto": "INDUMENTARIA",
       "categorias": [
         {
           "id": 3,
@@ -348,7 +348,7 @@
       "sexo": "FEMENINO",
       "precio_compra": 9000,
       "precio_venta": 18000,
-      "tipoProducto": "ROPA",
+      "tipoProducto": "INDUMENTARIA",
       "categorias": [
         {
           "id": 3,
@@ -358,11 +358,11 @@
     },
     {
       "id": "6",
-      "nombre": "Reloj minimalista",
-      "sexo": "UNISEX",
+      "nombre": "Falda",
+      "sexo": "FEMENINO",
       "precio_compra": 5000,
       "precio_venta": 10000,
-      "tipoProducto": "ACCESORIO",
+      "tipoProducto": "INDUMENTARIA",
       "categorias": [
         {
           "id": 3,
@@ -418,8 +418,8 @@
     },
     {
       "id": "9",
-      "url": "https://example.com/images/reloj-plateado.jpg",
-      "alt": "Reloj minimalista plateado"
+      "url": "https://example.com/images/falda.jpg",
+      "alt": "Falda"
     },
     {
       "id": "10",
@@ -512,7 +512,7 @@
         "sexo": "UNISEX",
         "precio_compra": 2500,
         "precio_venta": 5000,
-        "tipoProducto": "ROPA",
+        "tipoProducto": "INDUMENTARIA",
         "categorias": [
           {
             "id": 1,
@@ -583,7 +583,7 @@
         "sexo": "UNISEX",
         "precio_compra": 2500,
         "precio_venta": 5000,
-        "tipoProducto": "ROPA",
+        "tipoProducto": "INDUMENTARIA",
         "categorias": [
           {
             "id": 1,
@@ -640,7 +640,7 @@
         "sexo": "UNISEX",
         "precio_compra": 8000,
         "precio_venta": 15000,
-        "tipoProducto": "ROPA",
+        "tipoProducto": "INDUMENTARIA",
         "categorias": [
           {
             "id": 1,
@@ -774,15 +774,15 @@
     },
     {
       "id": "5",
-      "color": "Plateado",
+      "color": "Azul",
       "activo": true,
       "producto": {
         "id": 6,
-        "nombre": "Reloj minimalista",
-        "sexo": "UNISEX",
+        "nombre": "Falda",
+        "sexo": "FEMENINO",
         "precio_compra": 5000,
         "precio_venta": 10000,
-        "tipoProducto": "ACCESORIO",
+        "tipoProducto": "INDUMENTARIA",
         "categorias": [
           {
             "id": 3,
@@ -798,8 +798,8 @@
       "imagenes": [
         {
           "id": 9,
-          "url": "https://example.com/images/reloj-plateado.jpg",
-          "alt": "Reloj minimalista plateado"
+          "url": "https://example.com/images/falda.jpg",
+          "alt": "Falda"
         }
       ],
       "stocks": [
@@ -823,7 +823,7 @@
         "apellido": "Pérez",
         "dni": 30123456,
         "username": "jperez",
-        "rol": "USER",
+        "rol": "USUARIO",
         "direccion": {
           "id": 1,
           "domicilio": "Calle Falsa 123",
@@ -854,7 +854,7 @@
         "apellido": "Pérez",
         "dni": 30123456,
         "username": "jperez",
-        "rol": "USER",
+        "rol": "USUARIO",
         "direccion": {
           "id": 1,
           "domicilio": "Calle Falsa 123",
@@ -922,7 +922,7 @@
           "sexo": "UNISEX",
           "precio_compra": 2500,
           "precio_venta": 5000,
-          "tipoProducto": "ROPA",
+          "tipoProducto": "INDUMENTARIA",
           "categorias": [
             {
               "id": 1,
@@ -967,7 +967,7 @@
           "apellido": "Pérez",
           "dni": 30123456,
           "username": "jperez",
-          "rol": "USER",
+          "rol": "USUARIO",
           "direccion": {
             "id": 1,
             "domicilio": "Calle Falsa 123",
@@ -1004,7 +1004,7 @@
           "sexo": "UNISEX",
           "precio_compra": 8000,
           "precio_venta": 15000,
-          "tipoProducto": "ROPA",
+          "tipoProducto": "INDUMENTARIA",
           "categorias": [
             {
               "id": 1,
@@ -1049,7 +1049,7 @@
           "apellido": "Pérez",
           "dni": 30123456,
           "username": "jperez",
-          "rol": "USER",
+          "rol": "USUARIO",
           "direccion": {
             "id": 1,
             "domicilio": "Calle Falsa 123",
@@ -1086,7 +1086,7 @@
           "sexo": "UNISEX",
           "precio_compra": 2500,
           "precio_venta": 5000,
-          "tipoProducto": "ROPA",
+          "tipoProducto": "INDUMENTARIA",
           "categorias": [
             {
               "id": 1,
@@ -1125,7 +1125,7 @@
           "apellido": "Pérez",
           "dni": 30123456,
           "username": "jperez",
-          "rol": "USER",
+          "rol": "USUARIO",
           "direccion": {
             "id": 1,
             "domicilio": "Calle Falsa 123",

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Modal.module.css';
 import { ProductListItem } from '../../../store/productStore';
 import { useProductManager } from '../../../hooks/useProducts';
-import { ISexo } from '../../../types/iSexo';
+import { ISexo } from '../../../types/ISexo';
 import { ITipoProducto } from '../../../types/ITipoProducto';
 
 
@@ -37,7 +37,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
     precio_compra: 0,
     precio_venta: 0,
     sexo: ISexo.UNISEX,
-    tipoProducto: ITipoProducto.ROPA,
+    tipoProducto: ITipoProducto.INDUMENTARIA,
     stocks: [] as { id: number, talle: any, stock: number }[],
     activo: true,
     selectedCategorias: [] as number[]
@@ -65,7 +65,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
         precio_compra: 0,
         precio_venta: 0,
         sexo: ISexo.UNISEX,
-        tipoProducto: ITipoProducto.ROPA,
+        tipoProducto: ITipoProducto.INDUMENTARIA,
         stocks: [
           {
             id: 0, // Se asignará un ID real al guardar
@@ -414,9 +414,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
                       onChange={handleInputChange}
                       required
                     >
-                      <option value={ITipoProducto.ROPA}>Ropa</option>
+                      <option value={ITipoProducto.INDUMENTARIA}>Indumentaria</option>
                       <option value={ITipoProducto.CALZADO}>Calzado</option>
-                      <option value={ITipoProducto.ACCESORIO}>Accesorio</option>
                     </select>
                   </div>
                 </div>

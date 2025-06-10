@@ -1,4 +1,4 @@
 export enum IRol {
   ADMIN = "ADMIN",
-  USER = "USER"
+  USUARIO = "USUARIO"
 }

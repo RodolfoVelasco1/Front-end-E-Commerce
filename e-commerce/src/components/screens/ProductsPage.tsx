@@ -91,12 +91,12 @@ const ProductsPage: React.FC = () => {
       case '/calzado':
         return { tipoProducto: 'CALZADO' };
       case '/indumentaria':
-        return { tipoProducto: 'ROPA' };
+        return { tipoProducto: 'INDUMENTARIA' };
       case '/hombre':
         return { sexo: 'MASCULINO' };
       case '/mujer':
         return { sexo: 'FEMENINO' };
-      case '/nino':
+      case '/unisex':
         return { sexo: 'UNISEX' };
       case '/ofertas':
         return { ofertas: true };
@@ -314,9 +314,8 @@ const ProductsPage: React.FC = () => {
             onChange={(e) => cambiarFiltro('tipoProducto', e.target.value)}
           >
             <option value="">Todos</option>
-            <option value="ROPA">Ropa</option>
+            <option value="INDUMENTARIA">Indumentaria</option>
             <option value="CALZADO">Calzado</option>
-            <option value="ACCESORIO">Accesorio</option>
           </select>
         </div>
 
