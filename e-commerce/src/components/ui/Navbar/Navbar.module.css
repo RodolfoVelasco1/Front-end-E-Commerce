@@ -163,3 +163,66 @@
   }
 }
 
+.searchDropdown {
+  position: absolute;
+  top: 40px; /* Ajusta según tu diseño */
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.searchResult {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.searchResult:hover {
+  background-color: #f0f0f0;
+}
+
+/* Agregar estos estilos a tu archivo Navbar.module.css existente */
+
+.iconButton {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.iconButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.iconButton:active {
+  transform: translateY(0);
+}
+
+/* Asegúrate de que los iconos tengan el mismo tamaño */
+.iconLink i,
+.iconButton i {
+  font-size: 1.2rem;
+}
+
+/* Estilo para el icono de perfil (diferente del login) */
+.iconLink i.fa-user-circle {
+  font-size: 1.3rem;
+}
+
+/* Estilo para el icono de logout */
+.iconButton i.fa-sign-out-alt {
+  font-size: 1.1rem;
+}

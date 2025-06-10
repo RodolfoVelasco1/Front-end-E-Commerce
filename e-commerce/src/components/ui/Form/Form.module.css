@@ -1,112 +1,102 @@
+/* Form.module.css */
+
 .pageContainer {
-background-image: url('/images/runner.jpg');
-background-size: 100% 100%; /* Obliga a que la imagen se estire al tamaño completo */
-background-position: center;
-background-repeat: no-repeat; /* Evita que la imagen se repita */
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 70vh;
-min-width: 100vw;
-background-color: #f5f8fa;
-padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  background-color: #f0f2f5;
 }
+
 .formContainer {
-max-width: 480px;
-width: 80%;
-margin-top: 3.5%;
-background-color: white;
-border-radius: 8px;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-overflow: hidden;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
 }
+
 .tabContainer {
-display: flex;
-width: 100%;
-border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
+
 .tabButton {
-flex: 1;
-padding: 1rem;
-border: none;
-background-color: #f9f9f9;
-cursor: pointer;
-font-weight: 500;
-transition: all 0.2s ease;
+  flex: 1;
+  padding: 0.5rem 1rem;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+  transition: background 0.3s;
 }
+
+.tabButton:hover {
+  background: #d0d0d0;
+}
+
 .activeTab {
-background-color: white;
-border-bottom: 2px solid #4a90e2;
-color: #4a90e2;
+  background: #ffffff;
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
 }
+
 .formTitle {
-text-align: center;
-margin: 1.5rem 0;
-color: #333;
-font-weight: 600;
-font-size: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
+
 .form {
-display: flex;
-flex-direction: column;
-padding: 0 2rem 2rem;
+  display: flex;
+  flex-direction: column;
 }
+
 .inputContainer {
-display: flex;
-flex-direction: column;
-margin-bottom: 1rem;
-width: 100%;
+  margin-bottom: 1rem;
 }
-.label {
-font-size: 0.9rem;
-margin-bottom: 0.5rem;
-font-weight: 500;
-color: #333;
+
+.inputContainer input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
 }
-.input {
-padding: 0.75rem;
-border: 1px solid #ddd;
-border-radius: 4px;
-font-size: 1rem;
-transition: all 0.2s ease;
+
+.inputContainer input:focus {
+  border-color: #007bff;
+  outline: none;
 }
-.input:focus {
-outline: none;
-border-color: #4a90e2;
-box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+
+.error {
+  color: #d9534f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
 }
-.inputError {
-border-color: #e74c3c;
+
+.submitButton {
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
-.errorText {
-color: #e74c3c;
-font-size: 0.8rem;
-margin-top: 0.25rem;
+
+.submitButton:hover {
+  background-color: #0056b3;
 }
-.buttonContainer {
-margin-top: 1rem;
-display: flex;
-justify-content: center;
-}
-.button {
-background-color: #4a90e2;
-color: white;
-border: none;
-border-radius: 4px;
-padding: 0.75rem 1.5rem;
-font-size: 1rem;
-cursor: pointer;
-transition: all 0.2s ease;
-font-weight: 500;
-}
-.button:hover:not(:disabled) {
-background-color: #3a7bc8;
-}
-.button:active:not(:disabled) {
-transform: translateY(1px);
-}
-.disabled {
-background-color: #b3c7e1;
-cursor: not-allowed;
-opacity: 0.7;
+
+.submitButton:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
 }

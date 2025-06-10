@@ -1,156 +1,239 @@
 import React from 'react';
 import styles from './Filtro.module.css';
-import { useTalles } from '../../../hooks/useTalles';
-import { ISexo } from '../../../types/iSexo';
-import { ITipoProducto } from '../../../types/ITipoProducto';
 
-
-interface FiltroProps {
-  filters: {
-    sexo: string;
-    talle: string;
-    precio: string;
-    ofertas: boolean;
-    tipoProducto: string;
-  };
-  onFilterChange: (filters: FiltroProps['filters']) => void;
-  onClearFilters: () => void;
+export interface FilterState {
+  colores: string[];
+  talles: string[];
+  sexos: ('MASCULINO' | 'FEMENINO' | 'UNISEX')[];
+  categorias: string[];
+  soloPromociones: boolean;
+  ordenamiento: 'mayor_precio' | 'menor_precio' | 'ninguno';
 }
 
-const Filtro: React.FC<FiltroProps> = ({ filters, onFilterChange, onClearFilters }) => {
-  const { talles, isLoading: tallesLoading } = useTalles();
+interface FiltroProps {
+  filters: FilterState;
+  onFiltersChange: (filters: FilterState) => void;
+  availableColors: string[];
+  availableSizes: string[];
+  availableCategories: string[];
+}
 
-  const handleSexoChange = (sexo: string) => {
-    onFilterChange({ ...filters, sexo });
+const Filtro: React.FC<FiltroProps> = ({
+  filters,
+  onFiltersChange,
+  availableColors,
+  availableSizes,
+  availableCategories
+}) => {
+  
+  const handleColorChange = (color: string, checked: boolean) => {
+    const newColors = checked
+      ? [...filters.colores, color]
+      : filters.colores.filter(c => c !== color);
+    
+    onFiltersChange({
+      ...filters,
+      colores: newColors
+    });
   };
 
-  const handleTalleChange = (talle: string) => {
-    onFilterChange({ ...filters, talle });
+  const handleSizeChange = (size: string, checked: boolean) => {
+    const newSizes = checked
+      ? [...filters.talles, size]
+      : filters.talles.filter(s => s !== size);
+    
+    onFiltersChange({
+      ...filters,
+      talles: newSizes
+    });
   };
 
-  const handlePrecioChange = (precio: string) => {
-    onFilterChange({ ...filters, precio });
+  const handleGenderChange = (gender: 'MASCULINO' | 'FEMENINO' | 'UNISEX', checked: boolean) => {
+    const newGenders = checked
+      ? [...filters.sexos, gender]
+      : filters.sexos.filter(g => g !== gender);
+    
+    onFiltersChange({
+      ...filters,
+      sexos: newGenders
+    });
   };
 
-  const handleOfertasChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onFilterChange({ ...filters, ofertas: e.target.checked });
+  const handleCategoryChange = (category: string, checked: boolean) => {
+    const newCategories = checked
+      ? [...filters.categorias, category]
+      : filters.categorias.filter(c => c !== category);
+    
+    onFiltersChange({
+      ...filters,
+      categorias: newCategories
+    });
   };
 
-  const handleTipoProductoChange = (tipoProducto: string) => {
-    onFilterChange({ ...filters, tipoProducto });
+  const handlePromotionChange = (checked: boolean) => {
+    onFiltersChange({
+      ...filters,
+      soloPromociones: checked
+    });
+  };
+
+  const handleSortChange = (value: string) => {
+    onFiltersChange({
+      ...filters,
+      ordenamiento: value as 'mayor_precio' | 'menor_precio' | 'ninguno'
+    });
+  };
+
+  const clearAllFilters = () => {
+    onFiltersChange({
+      colores: [],
+      talles: [],
+      sexos: [],
+      categorias: [],
+      soloPromociones: false,
+      ordenamiento: 'ninguno'
+    });
   };
 
   return (
     <div className={styles.filtroContainer}>
       <div className={styles.filtroHeader}>
-        <h2 className={styles.filtroTitle}>Filtros</h2>
-        <button onClick={onClearFilters} className={styles.clearButton}>
-          Limpiar todo
+        <h3>Filtros</h3>
+        <button 
+          className={styles.clearButton}
+          onClick={clearAllFilters}
+        >
+          Limpiar filtros
         </button>
       </div>
 
-      {/* Filtro por Sexo */}
+      {/* Filtro de Color */}
       <div className={styles.filtroSection}>
-        <h3 className={styles.filtroSectionTitle}>Sexo</h3>
-        <div className={styles.filterOptions}>
-          <button
-            className={`${styles.filterButton} ${filters.sexo === ISexo.MASCULINO ? styles.active : ''}`}
-            onClick={() => handleSexoChange(filters.sexo === ISexo.MASCULINO ? '' : ISexo.MASCULINO)}
-          >
-            Hombre
-          </button>
-          <button
-            className={`${styles.filterButton} ${filters.sexo === ISexo.FEMENINO ? styles.active : ''}`}
-            onClick={() => handleSexoChange(filters.sexo === ISexo.FEMENINO ? '' : ISexo.FEMENINO)}
-          >
-            Mujer
-          </button>
-          <button
-            className={`${styles.filterButton} ${filters.sexo === ISexo.UNISEX ? styles.active : ''}`}
-            onClick={() => handleSexoChange(filters.sexo === ISexo.UNISEX ? '' : ISexo.UNISEX)}
-          >
-            Unisex
-          </button>
+        <h4>Color</h4>
+        <div className={styles.checkboxGroup}>
+          {availableColors.map(color => (
+            <label key={color} className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                checked={filters.colores.includes(color)}
+                onChange={(e) => handleColorChange(color, e.target.checked)}
+                className={styles.checkbox}
+              />
+              <span className={styles.checkboxText}>{color}</span>
+            </label>
+          ))}
         </div>
       </div>
 
-      {/* Filtro por Tipo de Producto */}
+      {/* Filtro de Talle */}
       <div className={styles.filtroSection}>
-        <h3 className={styles.filtroSectionTitle}>Tipo de Producto</h3>
-        <div className={styles.filterOptions}>
-          <button
-            className={`${styles.filterButton} ${filters.tipoProducto === ITipoProducto.ROPA ? styles.active : ''}`}
-            onClick={() => handleTipoProductoChange(filters.tipoProducto === ITipoProducto.ROPA ? '' : ITipoProducto.ROPA)}
-          >
-            Indumentaria
-          </button>
-          <button
-            className={`${styles.filterButton} ${filters.tipoProducto === ITipoProducto.CALZADO ? styles.active : ''}`}
-            onClick={() => handleTipoProductoChange(filters.tipoProducto === ITipoProducto.CALZADO ? '' : ITipoProducto.CALZADO)}
-          >
-            Calzado
-          </button>
-          <button
-            className={`${styles.filterButton} ${filters.tipoProducto === ITipoProducto.ACCESORIO ? styles.active : ''}`}
-            onClick={() => handleTipoProductoChange(filters.tipoProducto === ITipoProducto.ACCESORIO ? '' : ITipoProducto.ACCESORIO)}
-          >
-            Accesorios
-          </button>
+        <h4>Talle</h4>
+        <div className={styles.checkboxGroup}>
+          {availableSizes.map(size => (
+            <label key={size} className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                checked={filters.talles.includes(size)}
+                onChange={(e) => handleSizeChange(size, e.target.checked)}
+                className={styles.checkbox}
+              />
+              <span className={styles.checkboxText}>{size}</span>
+            </label>
+          ))}
         </div>
       </div>
 
-      {/* Filtro por Talle */}
+      {/* Filtro de Sexo */}
       <div className={styles.filtroSection}>
-        <h3 className={styles.filtroSectionTitle}>Talle</h3>
-        {tallesLoading ? (
-          <div className={styles.loadingTalles}>Cargando...</div>
-        ) : (
-          <div className={styles.tallesGrid}>
-            {talles.map((talle) => (
-              <button
-                key={talle.id}
-                className={`${styles.talleButton} ${filters.talle === talle.name ? styles.active : ''}`}
-                onClick={() => handleTalleChange(filters.talle === talle.name ? '' : talle.name)}
-              >
-                {talle.name}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Filtro por Precio */}
-      <div className={styles.filtroSection}>
-        <h3 className={styles.filtroSectionTitle}>Precio</h3>
-        <div className={styles.precioOptions}>
-          <button
-            className={`${styles.filterButton} ${filters.precio === 'asc' ? styles.active : ''}`}
-            onClick={() => handlePrecioChange(filters.precio === 'asc' ? '' : 'asc')}
-          >
-            Menor a mayor
-          </button>
-          <button
-            className={`${styles.filterButton} ${filters.precio === 'desc' ? styles.active : ''}`}
-            onClick={() => handlePrecioChange(filters.precio === 'desc' ? '' : 'desc')}
-          >
-            Mayor a menor
-          </button>
+        <h4>Sexo</h4>
+        <div className={styles.checkboxGroup}>
+          {(['MASCULINO', 'FEMENINO', 'UNISEX'] as const).map(gender => (
+            <label key={gender} className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                checked={filters.sexos.includes(gender)}
+                onChange={(e) => handleGenderChange(gender, e.target.checked)}
+                className={styles.checkbox}
+              />
+              <span className={styles.checkboxText}>
+                {gender === 'MASCULINO' ? 'Masculino' : 
+                 gender === 'FEMENINO' ? 'Femenino' : 'Unisex'}
+              </span>
+            </label>
+          ))}
         </div>
       </div>
 
-      {/* Filtro por Ofertas */}
+      {/* Filtro de Categoría */}
       <div className={styles.filtroSection}>
-        <h3 className={styles.filtroSectionTitle}>Ofertas</h3>
-        <div className={styles.ofertasCheck}>
-          <input
-            type="checkbox"
-            id="ofertas"
-            checked={filters.ofertas}
-            onChange={handleOfertasChange}
-            className={styles.checkbox}
-          />
-          <label htmlFor="ofertas" className={styles.checkboxLabel}>
-            Mostrar solo ofertas
+        <h4>Categoría</h4>
+        <div className={styles.checkboxGroup}>
+          {availableCategories.map(category => (
+            <label key={category} className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                checked={filters.categorias.includes(category)}
+                onChange={(e) => handleCategoryChange(category, e.target.checked)}
+                className={styles.checkbox}
+              />
+              <span className={styles.checkboxText}>{category}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Filtro de Promociones */}
+      <div className={styles.filtroSection}>
+        <h4>Promociones</h4>
+        <div className={styles.checkboxGroup}>
+          <label className={styles.checkboxLabel}>
+            <input
+              type="checkbox"
+              checked={filters.soloPromociones}
+              onChange={(e) => handlePromotionChange(e.target.checked)}
+              className={styles.checkbox}
+            />
+            <span className={styles.checkboxText}>Solo productos en promoción</span>
+          </label>
+        </div>
+      </div>
+
+      {/* Ordenamiento */}
+      <div className={styles.filtroSection}>
+        <h4>Ordenar por</h4>
+        <div className={styles.radioGroup}>
+          <label className={styles.radioLabel}>
+            <input
+              type="radio"
+              name="ordenamiento"
+              value="ninguno"
+              checked={filters.ordenamiento === 'ninguno'}
+              onChange={(e) => handleSortChange(e.target.value)}
+              className={styles.radio}
+            />
+            <span className={styles.radioText}>Sin ordenar</span>
+          </label>
+          <label className={styles.radioLabel}>
+            <input
+              type="radio"
+              name="ordenamiento"
+              value="menor_precio"
+              checked={filters.ordenamiento === 'menor_precio'}
+              onChange={(e) => handleSortChange(e.target.value)}
+              className={styles.radio}
+            />
+            <span className={styles.radioText}>Precio: Menor a Mayor</span>
+          </label>
+          <label className={styles.radioLabel}>
+            <input
+              type="radio"
+              name="ordenamiento"
+              value="mayor_precio"
+              checked={filters.ordenamiento === 'mayor_precio'}
+              onChange={(e) => handleSortChange(e.target.value)}
+              className={styles.radio}
+            />
+            <span className={styles.radioText}>Precio: Mayor a Menor</span>
           </label>
         </div>
       </div>

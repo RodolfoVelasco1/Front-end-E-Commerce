@@ -55,12 +55,12 @@ const Home = () => {
 
   // Handle buy now click
   const handleBuyNow = () => {
-    navigate('/products');
+    navigate('/productos');
   };
 
   // Handle view all products
   const handleViewAllProducts = () => {
-    navigate('/products');
+    navigate('/productos');
   };
 
   // Obtener productos aleatorios para mostrar

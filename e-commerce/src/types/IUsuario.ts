@@ -8,6 +8,7 @@ export interface IUsuario extends IBase {
   password?: string; // Opcional en el frontend
   dni: number;
   username: string;
+  email: string;
   rol: IRol;
   direccion: IDireccion;
 }
