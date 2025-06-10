@@ -2,31 +2,28 @@ import Footer from '../ui/Footer/Footer';
 import Navbar from '../ui/Navbar/Navbar';
 import styles from './Nosotros.module.css';
 
-
-const Admin: React.FC = () => {
-  
-
-  
-
+const Nosotros: React.FC = () => {
   return (
-    
     <div className={styles.infoPageContainer}>
-        <Navbar />
-        
+      <Navbar />
       <div className={styles.infoContainer}>
         <h1>Sobre Nosotros</h1>
-        <p>MadMax Indumentaria es una empresa fundada hace 100 años por Maximiliano Herrero, también conocido como "El Loco Max" (De ahí su nombre en inglés).</p>
-        <p>Max creía que la ropa nos volvía esclavos del sistema y así decidió vender toda su ropa en la calle, incluso la que llevaba puesta.</p>
-        <p>Cuando vio como la gente hacía fila para comprar su ropa, utilizó sus ganancias para abrir un pequeño local de ropa.</p>
-        <p>Ese local se convirtió en una franquisia, y esa franquisia se convirtió en una de las tiendas de ropa más caras del mundo.</p>
-        <p>Lamentablemente, el Loco Max fue asesinado por su mejor amigo Enzo DiLado quien robó su fortuna y se quedó con su esposa, sus hijos y su empresa.</p>
-        <p>Afortunadamente, la policía pudo arrestarlo, y después de 10 días de trabajo comunitario, fue puesto en libertad por buen comportamiento.</p>
-        <p>Ahora, arrepentido del crimen que cometió, Enzo volvió a la presidencia de la empresa para cumplir el sueño de su amigo Max: vender ropa barata y de mala calidad a precios muy caros para hacer mucho dinero.</p>
-        <p> ~ En memoria del Loco Max, para nosotros siempre serás MadMax ~</p>
+        <p>
+          Fundada en 1925 por Don Maximiliano Herrero, nuestra empresa comenzó como un pequeño taller de confección de ropa en el barrio de San Telmo, Buenos Aires. Con esfuerzo, dedicación y un compromiso inquebrantable con la calidad, Don Maximiliano transformó su pasión por el diseño y la confección en una marca reconocida y respetada en el mundo de la moda.
+        </p>
+        <p>
+          A lo largo de las décadas, nuestra empresa ha sabido adaptarse a las nuevas tendencias, sin perder de vista sus raíces artesanales. Con el paso de los años, pasamos de ser un taller familiar a una red de tiendas distribuidas en las principales ciudades del país. Cada una de nuestras prendas refleja la tradición, el cuidado y el esmero que nos han distinguido desde nuestros inicios.
+        </p>
+        <p>
+          En la actualidad, seguimos apostando por la innovación, combinando materiales de primera calidad con diseños exclusivos que buscan satisfacer las necesidades de un público exigente y cosmopolita. Nos enorgullece mantener una producción responsable, respetuosa con el medio ambiente y con las comunidades que nos rodean.
+        </p>
+        <p>
+          El legado de Don Maximiliano sigue presente en cada costura y en cada diseño, recordándonos que el éxito verdadero se construye sobre la base del esfuerzo, la pasión y el compromiso con cada uno de nuestros clientes.
+        </p>
       </div>
       <Footer />
     </div>
   );
 };
 
-export default Admin;
+export default Nosotros;
