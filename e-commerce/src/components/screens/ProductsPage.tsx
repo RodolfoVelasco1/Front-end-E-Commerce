@@ -5,6 +5,7 @@ import styles from './ProductsPage.module.css';
 import Navbar from '../ui/Navbar/Navbar';
 import Footer from '../ui/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
+import useStore from '../../store/store'; // Importar useStore
 
 // Tipos basados en tu db.json
 interface Categoria {
@@ -59,8 +60,8 @@ interface DetalleProducto {
 
 const ProductsPage: React.FC = () => {
   const location = useLocation();
-
   const navigate = useNavigate();
+  const { addToCart } = useStore(); // Usar addToCart del store
   
   // Estados para los datos
   const [detallesProductos, setDetallesProductos] = useState<DetalleProducto[]>([]);
@@ -151,15 +152,42 @@ const ProductsPage: React.FC = () => {
     }
   }, [location.pathname]);
 
+  // Verificar si hay descuento activo - CORREGIDA
+  const tieneDescuentoActivo = (descuento: Descuento | null): boolean => {
+    if (!descuento) return false;
+    
+    const ahora = new Date();
+    const inicio = new Date(descuento.fechaInicio);
+    const fin = new Date(descuento.fechaFin);
+    
+    // Debug: ver las fechas
+    console.log('Fecha actual:', ahora);
+    console.log('Fecha inicio descuento:', inicio);
+    console.log('Fecha fin descuento:', fin);
+    console.log('¿Está activo?', ahora >= inicio && ahora <= fin);
+    
+    return ahora >= inicio && ahora <= fin;
+  };
+
   // Aplicar filtros
   useEffect(() => {
     let resultado = [...detallesProductos];
 
-    // Filtro especial para ofertas
+    // Filtro especial para ofertas - CORREGIDO
     if (filtros.ofertas) {
-      resultado = resultado.filter(detalle => 
-        detalle.descuento && tieneDescuentoActivo(detalle.descuento)
-      );
+      resultado = resultado.filter(detalle => {
+        const tieneDescuento = detalle.descuento !== null;
+        const estaActivo = tieneDescuentoActivo(detalle.descuento);
+        
+        // Debug: mostrar información de cada producto
+        console.log(`Producto: ${detalle.producto.nombre}`, {
+          tieneDescuento,
+          estaActivo,
+          descuento: detalle.descuento
+        });
+        
+        return tieneDescuento && estaActivo;
+      });
     }
 
     // Filtrar por sexo
@@ -198,6 +226,7 @@ const ProductsPage: React.FC = () => {
       resultado.sort((a, b) => calcularPrecioFinal(b) - calcularPrecioFinal(a));
     }
 
+    console.log('Productos filtrados:', resultado); // Debug
     setProductosFiltrados(resultado);
   }, [filtros, detallesProductos, location.pathname, ordenPrecio]);
 
@@ -222,23 +251,32 @@ const ProductsPage: React.FC = () => {
     setOrdenPrecio('');
   };
 
-  // Verificar si hay descuento activo
-  const tieneDescuentoActivo = (descuento: Descuento | null): boolean => {
-    if (!descuento) return false;
-    
-    const ahora = new Date();
-    const inicio = new Date(descuento.fechaInicio);
-    const fin = new Date(descuento.fechaFin);
-    
-    return ahora >= inicio && ahora <= fin;
-  };
-
   // Calcular precio final
   const calcularPrecioFinal = (detalle: DetalleProducto): number => {
     if (detalle.descuento && tieneDescuentoActivo(detalle.descuento)) {
       return detalle.producto.precio_venta * (1 - detalle.descuento.porcentaje / 100);
     }
     return detalle.producto.precio_venta;
+  };
+
+  // Función para manejar agregar al carrito
+  const handleAddToCart = (detalle: DetalleProducto, event: React.MouseEvent) => {
+    // Prevenir que se ejecute el onClick del contenedor padre
+    event.stopPropagation();
+    
+    const precioFinal = calcularPrecioFinal(detalle);
+    
+    const cartProduct = {
+      id: detalle.id, // Usar el ID del detalle para distinguir color
+      name: `${detalle.producto.nombre} - ${detalle.color}`,
+      price: precioFinal,
+      image: detalle.imagenes[0]?.url || "/api/placeholder/300/300"
+    };
+    
+    addToCart(cartProduct);
+    
+    // Mostrar confirmación
+    alert(`${detalle.producto.nombre} (${detalle.color}) agregado al carrito`);
   };
 
   // Obtener el título según la ruta
@@ -253,7 +291,7 @@ const ProductsPage: React.FC = () => {
         return 'Productos para Hombre';
       case '/mujer':
         return 'Productos para Mujer';
-      case '/nino':
+      case '/unisex':
         return 'Productos Unisex';
       case '/ofertas':
         return 'Ofertas';
@@ -292,8 +330,8 @@ const ProductsPage: React.FC = () => {
           </label>
         </div>
 
-        {/* Filtro por sexo */}
-        <div className={styles.filtroGrup}>
+        {/* Filtro por sexo - CORREGIDO el nombre de clase */}
+        <div className={styles.filtroGrupo}>
           <label>Sexo:</label>
           <select 
             value={filtros.sexo} 
@@ -451,7 +489,10 @@ const ProductsPage: React.FC = () => {
                     Stock total: {stockTotal} unidades
                   </div>
 
-                  <button className={styles.agregarCarritoBtn}>
+                  <button 
+                    className={styles.agregarCarritoBtn}
+                    onClick={(e) => handleAddToCart(detalle, e)}
+                  >
                     Agregar al carrito
                   </button>
                 </div>

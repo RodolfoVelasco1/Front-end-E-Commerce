@@ -217,7 +217,7 @@
       "id": "1",
       "nombre": "Oferta Verano",
       "fechaInicio": "2025-01-01T00:00:00Z",
-      "fechaFin": "2025-03-31T23:59:59Z",
+      "fechaFin": "2025-07-31T23:59:59Z",
       "porcentaje": 20
     },
     {
@@ -378,53 +378,48 @@
   "imagenes": [
     {
       "id": "1",
-      "url": "https://example.com/images/remera-blanca.jpg",
+      "url": "https://media.istockphoto.com/id/525879529/photo/young-man.jpg?s=1024x1024&w=is&k=20&c=OnURq8wPgW5KDX-ALCdHf9Cy9IbdZAGE6sQDIE4dOhE=",
       "alt": "Remera blanca básica"
     },
     {
       "id": "2",
-      "url": "https://example.com/images/remera-negra.jpg",
+      "url": "https://media.istockphoto.com/id/455642169/photo/black-t-shirt-on-a-white-background.jpg?s=1024x1024&w=is&k=20&c=0AcntJgpcgAB-cMcTXH7O0nMg6WbR_jV7x6zj9LacEk=",
       "alt": "Remera negra básica"
     },
     {
       "id": "3",
-      "url": "https://example.com/images/jean-azul.jpg",
+      "url": "https://media.istockphoto.com/id/173239968/photo/skinny-tight-blue-jeans-on-white-background.jpg?s=1024x1024&w=is&k=20&c=VQ6GQh9ojjR-Ef-yydcRfaa1WQ7ZMzVM9AFRe8ZRJpI=",
       "alt": "Pantalón jean azul clásico"
     },
     {
       "id": "4",
-      "url": "https://example.com/images/jean-negro.jpg",
+      "url": "https://media.istockphoto.com/id/1084128060/photo/blank-black-mens-pants-mock-up-isolated.jpg?s=1024x1024&w=is&k=20&c=W8h4bW_eNpIL1quhQzv9qOK0vNZmlHECizFExxsweoI=",
       "alt": "Pantalón jean negro"
     },
     {
       "id": "5",
-      "url": "https://example.com/images/zapatillas-blancas.jpg",
+      "url": "https://media.istockphoto.com/id/1324847242/photo/pair-of-white-leather-trainers-on-white-background.jpg?s=1024x1024&w=is&k=20&c=paCekjw8iHTIKD4jpPXPdZY60gtOgbXV3pO9k1OTASo=",
       "alt": "Zapatillas deportivas blancas"
     },
     {
       "id": "6",
-      "url": "https://example.com/images/zapatillas-negras.jpg",
+      "url": "https://media.istockphoto.com/id/674733874/photo/running-shoes-sneakers-or-trainers-isolated-on-white.jpg?s=1024x1024&w=is&k=20&c=5HCEOUkVQLxhEryt5zSkvRgNdIuQcOGywtQDP0ntNbQ=",
       "alt": "Zapatillas deportivas negras"
     },
     {
       "id": "7",
-      "url": "https://example.com/images/camisa-blanca.jpg",
+      "url": "https://media.istockphoto.com/id/157567639/photo/close-up-of-a-white-mens-shirts.jpg?s=1024x1024&w=is&k=20&c=rXWpqjkK54Nxg6jOARPByRaJ2tgxKgrUFyEkc7kPA9U=",
       "alt": "Camisa formal blanca"
     },
     {
       "id": "8",
-      "url": "https://example.com/images/vestido-negro.jpg",
+      "url": "https://media.istockphoto.com/id/961849932/photo/black-dress-on-hanger-isolated-on-white-background.jpg?s=1024x1024&w=is&k=20&c=s0WcMKHhFNUdv01SACjFt8W36eceq-4fGDHoXJksW0k=",
       "alt": "Vestido elegante negro"
     },
     {
       "id": "9",
-      "url": "https://example.com/images/falda.jpg",
+      "url": "https://media.istockphoto.com/id/882157056/photo/red-elegant-skirt-with-ribbon-bow-isolated-on-white.jpg?s=1024x1024&w=is&k=20&c=U_oEEww6gnkNsr53IOCenbgjwPacnBwlQ-f294ehZVg=",
       "alt": "Falda"
-    },
-    {
-      "id": "10",
-      "url": "https://example.com/images/reloj-dorado.jpg",
-      "alt": "Reloj minimalista dorado"
     }
   ],
   "stocks": [
@@ -528,13 +523,13 @@
         "id": 1,
         "nombre": "Oferta Verano",
         "fechaInicio": "2025-01-01T00:00:00Z",
-        "fechaFin": "2025-03-31T23:59:59Z",
+        "fechaFin": "2025-07-31T23:59:59Z",
         "porcentaje": 20
       },
       "imagenes": [
         {
           "id": 1,
-          "url": "https://example.com/images/remera-blanca.jpg",
+          "url": "https://media.istockphoto.com/id/525879529/photo/young-man.jpg?s=1024x1024&w=is&k=20&c=OnURq8wPgW5KDX-ALCdHf9Cy9IbdZAGE6sQDIE4dOhE=",
           "alt": "Remera blanca básica"
         }
       ],
@@ -599,7 +594,7 @@
       "imagenes": [
         {
           "id": 2,
-          "url": "https://example.com/images/remera-negra.jpg",
+          "url": "https://media.istockphoto.com/id/455642169/photo/black-t-shirt-on-a-white-background.jpg?s=1024x1024&w=is&k=20&c=0AcntJgpcgAB-cMcTXH7O0nMg6WbR_jV7x6zj9LacEk=",
           "alt": "Remera negra básica"
         }
       ],
@@ -656,13 +651,13 @@
         "id": 1,
         "nombre": "Oferta Verano",
         "fechaInicio": "2025-01-01T00:00:00Z",
-        "fechaFin": "2025-03-31T23:59:59Z",
+        "fechaFin": "2025-07-31T23:59:59Z",
         "porcentaje": 20
       },
       "imagenes": [
         {
           "id": 3,
-          "url": "https://example.com/images/jean-azul.jpg",
+          "url": "https://media.istockphoto.com/id/173239968/photo/skinny-tight-blue-jeans-on-white-background.jpg?s=1024x1024&w=is&k=20&c=VQ6GQh9ojjR-Ef-yydcRfaa1WQ7ZMzVM9AFRe8ZRJpI=",
           "alt": "Pantalón jean azul clásico"
         }
       ],
@@ -725,7 +720,7 @@
       "imagenes": [
         {
           "id": 5,
-          "url": "https://example.com/images/zapatillas-blancas.jpg",
+          "url": "https://media.istockphoto.com/id/1324847242/photo/pair-of-white-leather-trainers-on-white-background.jpg?s=1024x1024&w=is&k=20&c=paCekjw8iHTIKD4jpPXPdZY60gtOgbXV3pO9k1OTASo=",
           "alt": "Zapatillas deportivas blancas"
         }
       ],
@@ -774,7 +769,7 @@
     },
     {
       "id": "5",
-      "color": "Azul",
+      "color": "Rojo",
       "activo": true,
       "producto": {
         "id": 6,
@@ -798,7 +793,7 @@
       "imagenes": [
         {
           "id": 9,
-          "url": "https://example.com/images/falda.jpg",
+          "url": "https://media.istockphoto.com/id/882157056/photo/red-elegant-skirt-with-ribbon-bow-isolated-on-white.jpg?s=1024x1024&w=is&k=20&c=U_oEEww6gnkNsr53IOCenbgjwPacnBwlQ-f294ehZVg=",
           "alt": "Falda"
         }
       ],
@@ -938,13 +933,13 @@
           "id": 1,
           "nombre": "Oferta Verano",
           "fechaInicio": "2025-01-01T00:00:00Z",
-          "fechaFin": "2025-03-31T23:59:59Z",
+          "fechaFin": "2025-07-31T23:59:59Z",
           "porcentaje": 20
         },
         "imagenes": [
           {
             "id": 1,
-            "url": "https://example.com/images/remera-blanca.jpg",
+            "url": "https://media.istockphoto.com/id/525879529/photo/young-man.jpg?s=1024x1024&w=is&k=20&c=OnURq8wPgW5KDX-ALCdHf9Cy9IbdZAGE6sQDIE4dOhE=",
             "alt": "Remera blanca básica"
           }
         ],
@@ -1020,13 +1015,13 @@
           "id": 1,
           "nombre": "Oferta Verano",
           "fechaInicio": "2025-01-01T00:00:00Z",
-          "fechaFin": "2025-03-31T23:59:59Z",
+          "fechaFin": "2025-07-31T23:59:59Z",
           "porcentaje": 20
         },
         "imagenes": [
           {
             "id": 3,
-            "url": "https://example.com/images/jean-azul.jpg",
+            "url": "https://media.istockphoto.com/id/173239968/photo/skinny-tight-blue-jeans-on-white-background.jpg?s=1024x1024&w=is&k=20&c=VQ6GQh9ojjR-Ef-yydcRfaa1WQ7ZMzVM9AFRe8ZRJpI=",
             "alt": "Pantalón jean azul clásico"
           }
         ],
@@ -1102,7 +1097,7 @@
         "imagenes": [
           {
             "id": 2,
-            "url": "https://example.com/images/remera-negra.jpg",
+            "url": "https://media.istockphoto.com/id/455642169/photo/black-t-shirt-on-a-white-background.jpg?s=1024x1024&w=is&k=20&c=0AcntJgpcgAB-cMcTXH7O0nMg6WbR_jV7x6zj9LacEk=",
             "alt": "Remera negra básica"
           }
         ],
@@ -1184,7 +1179,7 @@
         "imagenes": [
           {
             "id": 5,
-            "url": "https://example.com/images/zapatillas-blancas.jpg",
+            "url": "https://media.istockphoto.com/id/1324847242/photo/pair-of-white-leather-trainers-on-white-background.jpg?s=1024x1024&w=is&k=20&c=paCekjw8iHTIKD4jpPXPdZY60gtOgbXV3pO9k1OTASo=",
             "alt": "Zapatillas deportivas blancas"
           }
         ],
