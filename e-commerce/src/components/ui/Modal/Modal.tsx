@@ -5,6 +5,14 @@ import { useProductManager } from '../../../hooks/useProducts';
 import { ISexo } from '../../../types/ISexo';
 import { ITipoProducto } from '../../../types/ITipoProducto';
 
+// Add type definition for Descuento
+interface IDescuento {
+  id: number;
+  nombre: string;
+  porcentaje: number;
+  fechaInicio: string;
+  fechaFin: string;
+}
 
 interface ModalProps {
   isOpen: boolean;
@@ -23,6 +31,24 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
     updateProducto
   } = useProductManager();
   
+  // Mock descuentos data - replace this with actual data from your store/API
+  const descuentos: IDescuento[] = [
+    {
+      id: 1,
+      nombre: "Descuento de Temporada",
+      porcentaje: 15,
+      fechaInicio: "2025-06-01",
+      fechaFin: "2025-07-31"
+    },
+    {
+      id: 2,
+      nombre: "Black Friday",
+      porcentaje: 25,
+      fechaInicio: "2025-11-25",
+      fechaFin: "2025-11-30"
+    }
+  ];
+  
   // Encontrar el detalle del producto completo para edición/visualización
   const detalleProducto = productData 
     ? detallesProductos.find(d => d.id === productData.detalleProductoId) 
@@ -37,10 +63,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
     precio_compra: 0,
     precio_venta: 0,
     sexo: ISexo.UNISEX,
-    tipoProducto: ITipoProducto.INDUMENTARIA,
+    tipoProducto: ITipoProducto.ROPA,
     stocks: [] as { id: number, talle: any, stock: number }[],
     activo: true,
-    selectedCategorias: [] as number[]
+    selectedCategorias: [] as number[],
+    // Nuevos campos para imágenes y descuentos
+    imagenes: [] as { id: number, url: string, alt: string }[],
+    descuentoId: null as number | null
   });
 
   // Cargar datos del producto cuando se abre el modal
@@ -55,7 +84,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
         tipoProducto: producto.tipoProducto,
         stocks: detalleProducto.stocks,
         activo: detalleProducto.activo,
-        selectedCategorias: producto.categorias.map(c => c.id)
+        selectedCategorias: producto.categorias.map(c => c.id),
+        imagenes: detalleProducto.imagenes || [],
+        descuentoId: detalleProducto.descuento ? detalleProducto.descuento.id : null
       });
     } else if (mode === 'add') {
       // Reset form para añadir un nuevo producto
@@ -65,7 +96,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
         precio_compra: 0,
         precio_venta: 0,
         sexo: ISexo.UNISEX,
-        tipoProducto: ITipoProducto.INDUMENTARIA,
+        tipoProducto: ITipoProducto.ROPA,
         stocks: [
           {
             id: 0, // Se asignará un ID real al guardar
@@ -74,7 +105,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
           }
         ],
         activo: true,
-        selectedCategorias: []
+        selectedCategorias: [],
+        imagenes: [{ id: 0, url: '', alt: '' }],
+        descuentoId: null
       });
     }
   }, [detalleProducto, producto, mode, talles]);
@@ -157,6 +190,44 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
     }
   };
 
+  // Nuevas funciones para manejar imágenes
+  const handleImageChange = (index: number, field: 'url' | 'alt', value: string) => {
+    setFormData({
+      ...formData,
+      imagenes: formData.imagenes.map((img, i) => 
+        i === index ? { ...img, [field]: value } : img
+      )
+    });
+  };
+
+  const handleAddImage = () => {
+    setFormData({
+      ...formData,
+      imagenes: [
+        ...formData.imagenes,
+        { id: 0, url: '', alt: '' }
+      ]
+    });
+  };
+
+  const handleRemoveImage = (index: number) => {
+    if (formData.imagenes.length > 1) {
+      setFormData({
+        ...formData,
+        imagenes: formData.imagenes.filter((_, i) => i !== index)
+      });
+    }
+  };
+
+  // Función para manejar cambio de descuento
+  const handleDescuentoChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setFormData({
+      ...formData,
+      descuentoId: value === '' ? null : parseInt(value)
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -164,6 +235,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
     const productoCategorias = categorias.filter(cat => 
       formData.selectedCategorias.includes(cat.id)
     );
+
+    // Buscar el descuento seleccionado
+    const selectedDescuento = formData.descuentoId 
+      ? descuentos.find((d: IDescuento) => d.id === formData.descuentoId) || null
+      : null;
     
     if (mode === 'edit' && producto && detalleProducto) {
       // Actualizar producto existente
@@ -181,7 +257,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
         ...detalleProducto,
         color: formData.color,
         activo: formData.activo,
-        producto: updatedProducto
+        producto: updatedProducto,
+        descuento: selectedDescuento,
+        imagenes: formData.imagenes.filter(img => img.url.trim() !== '')
       };
       
       updateProducto(updatedProducto, updatedDetalleProducto, formData.stocks);
@@ -202,8 +280,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
         color: formData.color,
         activo: formData.activo,
         producto: newProducto,
-        descuento: null,
-        imagenes: [],
+        descuento: selectedDescuento,
+        imagenes: formData.imagenes.filter(img => img.url.trim() !== ''),
         stocks: []
       };
       
@@ -399,8 +477,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
                       onChange={handleInputChange}
                       required
                     >
-                      <option value={ISexo.MASCULINO}>Masculino</option>
-                      <option value={ISexo.FEMENINO}>Femenino</option>
+                      <option value={ISexo.HOMBRE}>Hombre</option>
+                      <option value={ISexo.MUJER}>Mujer</option>
                       <option value={ISexo.UNISEX}>Unisex</option>
                     </select>
                   </div>
@@ -414,7 +492,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
                       onChange={handleInputChange}
                       required
                     >
-                      <option value={ITipoProducto.INDUMENTARIA}>Indumentaria</option>
+                      <option value={ITipoProducto.ROPA}>Indumentaria</option>
                       <option value={ITipoProducto.CALZADO}>Calzado</option>
                     </select>
                   </div>
@@ -443,6 +521,106 @@ const Modal: React.FC<ModalProps> = ({ isOpen, mode, onClose, onConfirm, product
                     />
                     <label htmlFor="activo">Producto Activo</label>
                   </div>
+                </div>
+              </div>
+
+              {/* Nueva sección de descuentos */}
+              <div className={styles.formSection}>
+                <h3>Promoción/Descuento</h3>
+                <div className={styles.formGroup}>
+                  <label htmlFor="descuento">Descuento:</label>
+                  <select
+                    id="descuento"
+                    value={formData.descuentoId || ''}
+                    onChange={handleDescuentoChange}
+                  >
+                    <option value="">Sin descuento</option>
+                    {descuentos.map((descuento: IDescuento) => (
+                      <option key={descuento.id} value={descuento.id}>
+                        {descuento.nombre} - {descuento.porcentaje}%
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                {formData.descuentoId && (
+                  <div className={styles.discountInfo}>
+                    {(() => {
+                      const selectedDiscount = descuentos.find((d: IDescuento) => d.id === formData.descuentoId);
+                      return selectedDiscount ? (
+                        <p>
+                          Válido desde: {new Date(selectedDiscount.fechaInicio).toLocaleDateString()} 
+                          hasta: {new Date(selectedDiscount.fechaFin).toLocaleDateString()}
+                        </p>
+                      ) : null;
+                    })()}
+                  </div>
+                )}
+              </div>
+
+              {/* Nueva sección de imágenes */}
+              <div className={styles.formSection}>
+                <h3>Imágenes del Producto</h3>
+                <div className={styles.imageFormSection}>
+                  {formData.imagenes.map((imagen, index) => (
+                    <div key={index} className={styles.imageFormItem}>
+                      <div className={styles.imageFormHeader}>
+                        <h4>Imagen {index + 1}</h4>
+                        {formData.imagenes.length > 1 && (
+                          <button
+                            type="button"
+                            className={styles.removeImageButton}
+                            onClick={() => handleRemoveImage(index)}
+                          >
+                            Eliminar
+                          </button>
+                        )}
+                      </div>
+                      
+                      <div className={styles.formGroup}>
+                        <label htmlFor={`url-${index}`}>URL de la imagen:</label>
+                        <input
+                          type="url"
+                          id={`url-${index}`}
+                          value={imagen.url}
+                          onChange={(e) => handleImageChange(index, 'url', e.target.value)}
+                          placeholder="https://ejemplo.com/imagen.jpg"
+                          required
+                        />
+                      </div>
+                      
+                      <div className={styles.formGroup}>
+                        <label htmlFor={`alt-${index}`}>Texto alternativo:</label>
+                        <input
+                          type="text"
+                          id={`alt-${index}`}
+                          value={imagen.alt}
+                          onChange={(e) => handleImageChange(index, 'alt', e.target.value)}
+                          placeholder="Descripción de la imagen"
+                          required
+                        />
+                      </div>
+                      
+                      {imagen.url && (
+                        <div className={styles.imagePreview}>
+                          <img 
+                            src={imagen.url} 
+                            alt={imagen.alt || 'Vista previa'} 
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).style.display = 'none';
+                            }}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                  
+                  <button
+                    type="button"
+                    className={styles.addImageButton}
+                    onClick={handleAddImage}
+                  >
+                    Agregar otra imagen
+                  </button>
                 </div>
               </div>
               

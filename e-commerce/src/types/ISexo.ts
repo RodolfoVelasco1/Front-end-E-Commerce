@@ -1,5 +1,5 @@
 export enum ISexo {
-  MASCULINO = "MASCULINO",
-  FEMENINO = "FEMENINO",
+  HOMBRE = "HOMBRE",
+  MUJER = "MUJER",
   UNISEX = "UNISEX"
 }

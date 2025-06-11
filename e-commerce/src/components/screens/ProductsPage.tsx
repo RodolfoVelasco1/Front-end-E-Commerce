@@ -92,11 +92,11 @@ const ProductsPage: React.FC = () => {
       case '/calzado':
         return { tipoProducto: 'CALZADO' };
       case '/indumentaria':
-        return { tipoProducto: 'INDUMENTARIA' };
+        return { tipoProducto: 'ROPA' };
       case '/hombre':
-        return { sexo: 'MASCULINO' };
+        return { sexo: 'HOMBRE' };
       case '/mujer':
-        return { sexo: 'FEMENINO' };
+        return { sexo: 'MUJER' };
       case '/unisex':
         return { sexo: 'UNISEX' };
       case '/ofertas':
@@ -142,15 +142,31 @@ const ProductsPage: React.FC = () => {
   }, []);
 
   // Aplicar filtro inicial basado en la ruta
-  useEffect(() => {
-    const initialFilter = getInitialFilter();
-    if (Object.keys(initialFilter).length > 0) {
-      setFiltros(prev => ({
-        ...prev,
-        ...initialFilter
-      }));
-    }
-  }, [location.pathname]);
+useEffect(() => {
+  const initialFilter = getInitialFilter();
+  if (Object.keys(initialFilter).length > 0) {
+    // CAMBIO: Reemplazar completamente los filtros en lugar de hacer merge
+    setFiltros({
+      sexo: '',
+      tipoProducto: '',
+      categoria: '',
+      talle: '',
+      color: '',
+      ofertas: false,
+      ...initialFilter // Aplicar solo el filtro de la ruta actual
+    });
+  } else {
+    // Si no hay filtro específico de ruta, limpiar todos los filtros
+    setFiltros({
+      sexo: '',
+      tipoProducto: '',
+      categoria: '',
+      talle: '',
+      color: '',
+      ofertas: false
+    });
+  }
+}, [location.pathname]);
 
   // Verificar si hay descuento activo - CORREGIDA
   const tieneDescuentoActivo = (descuento: Descuento | null): boolean => {
@@ -338,8 +354,8 @@ const ProductsPage: React.FC = () => {
             onChange={(e) => cambiarFiltro('sexo', e.target.value)}
           >
             <option value="">Todos</option>
-            <option value="MASCULINO">Masculino</option>
-            <option value="FEMENINO">Femenino</option>
+            <option value="HOMBRE">Hombre</option>
+            <option value="MUJER">Mujer</option>
             <option value="UNISEX">Unisex</option>
           </select>
         </div>
@@ -352,7 +368,7 @@ const ProductsPage: React.FC = () => {
             onChange={(e) => cambiarFiltro('tipoProducto', e.target.value)}
           >
             <option value="">Todos</option>
-            <option value="INDUMENTARIA">Indumentaria</option>
+            <option value="ROPA">Indumentaria</option>
             <option value="CALZADO">Calzado</option>
           </select>
         </div>

@@ -4,7 +4,7 @@ import styles from './Filtro.module.css';
 export interface FilterState {
   colores: string[];
   talles: string[];
-  sexos: ('MASCULINO' | 'FEMENINO' | 'UNISEX')[];
+  sexos: ('HOMBRE' | 'MUJER' | 'UNISEX')[];
   categorias: string[];
   soloPromociones: boolean;
   ordenamiento: 'mayor_precio' | 'menor_precio' | 'ninguno';
@@ -48,7 +48,7 @@ const Filtro: React.FC<FiltroProps> = ({
     });
   };
 
-  const handleGenderChange = (gender: 'MASCULINO' | 'FEMENINO' | 'UNISEX', checked: boolean) => {
+  const handleGenderChange = (gender: 'HOMBRE' | 'MUJER' | 'UNISEX', checked: boolean) => {
     const newGenders = checked
       ? [...filters.sexos, gender]
       : filters.sexos.filter(g => g !== gender);
@@ -147,7 +147,7 @@ const Filtro: React.FC<FiltroProps> = ({
       <div className={styles.filtroSection}>
         <h4>Sexo</h4>
         <div className={styles.checkboxGroup}>
-          {(['MASCULINO', 'FEMENINO', 'UNISEX'] as const).map(gender => (
+          {(['HOMBRE', 'MUJER', 'UNISEX'] as const).map(gender => (
             <label key={gender} className={styles.checkboxLabel}>
               <input
                 type="checkbox"
@@ -156,8 +156,8 @@ const Filtro: React.FC<FiltroProps> = ({
                 className={styles.checkbox}
               />
               <span className={styles.checkboxText}>
-                {gender === 'MASCULINO' ? 'Masculino' : 
-                 gender === 'FEMENINO' ? 'Femenino' : 'Unisex'}
+                {gender === 'HOMBRE' ? 'Hombre' : 
+                 gender === 'MUJER' ? 'Mujer' : 'Unisex'}
               </span>
             </label>
           ))}

@@ -24,10 +24,10 @@ interface Imagen {
 interface Producto {
   id: number;
   nombre: string;
-  sexo: 'MASCULINO' | 'FEMENINO' | 'UNISEX';
+  sexo: 'HOMBRE' | 'MUJER' | 'UNISEX';
   precio_compra: number;
   precio_venta: number;
-  tipoProducto: 'INDUMENTARIA' | 'CALZADO';
+  tipoProducto: 'ROPA' | 'CALZADO';
   categorias: Categoria[];
 }
 

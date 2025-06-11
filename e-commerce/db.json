@@ -280,7 +280,7 @@
       "sexo": "UNISEX",
       "precio_compra": 2500,
       "precio_venta": 5000,
-      "tipoProducto": "INDUMENTARIA",
+      "tipoProducto": "ROPA",
       "categorias": [
         {
           "id": 1,
@@ -298,7 +298,7 @@
       "sexo": "UNISEX",
       "precio_compra": 8000,
       "precio_venta": 15000,
-      "tipoProducto": "INDUMENTARIA",
+      "tipoProducto": "ROPA",
       "categorias": [
         {
           "id": 1,
@@ -331,10 +331,10 @@
     {
       "id": "4",
       "nombre": "Camisa formal",
-      "sexo": "MASCULINO",
+      "sexo": "HOMBRE",
       "precio_compra": 7000,
       "precio_venta": 14000,
-      "tipoProducto": "INDUMENTARIA",
+      "tipoProducto": "ROPA",
       "categorias": [
         {
           "id": 3,
@@ -345,10 +345,10 @@
     {
       "id": "5",
       "nombre": "Vestido elegante",
-      "sexo": "FEMENINO",
+      "sexo": "MUJER",
       "precio_compra": 9000,
       "precio_venta": 18000,
-      "tipoProducto": "INDUMENTARIA",
+      "tipoProducto": "ROPA",
       "categorias": [
         {
           "id": 3,
@@ -359,10 +359,10 @@
     {
       "id": "6",
       "nombre": "Falda",
-      "sexo": "FEMENINO",
+      "sexo": "MUJER",
       "precio_compra": 5000,
       "precio_venta": 10000,
-      "tipoProducto": "INDUMENTARIA",
+      "tipoProducto": "ROPA",
       "categorias": [
         {
           "id": 3,
@@ -507,7 +507,7 @@
         "sexo": "UNISEX",
         "precio_compra": 2500,
         "precio_venta": 5000,
-        "tipoProducto": "INDUMENTARIA",
+        "tipoProducto": "ROPA",
         "categorias": [
           {
             "id": 1,
@@ -578,7 +578,7 @@
         "sexo": "UNISEX",
         "precio_compra": 2500,
         "precio_venta": 5000,
-        "tipoProducto": "INDUMENTARIA",
+        "tipoProducto": "ROPA",
         "categorias": [
           {
             "id": 1,
@@ -635,7 +635,7 @@
         "sexo": "UNISEX",
         "precio_compra": 8000,
         "precio_venta": 15000,
-        "tipoProducto": "INDUMENTARIA",
+        "tipoProducto": "ROPA",
         "categorias": [
           {
             "id": 1,
@@ -695,7 +695,7 @@
       "producto": {
         "id": 3,
         "nombre": "Zapatillas deportivas",
-        "sexo": "MASCULINO",
+        "sexo": "HOMBRE",
         "precio_compra": 12000,
         "precio_venta": 24000,
         "tipoProducto": "CALZADO",
@@ -774,10 +774,10 @@
       "producto": {
         "id": 6,
         "nombre": "Falda",
-        "sexo": "FEMENINO",
+        "sexo": "MUJER",
         "precio_compra": 5000,
         "precio_venta": 10000,
-        "tipoProducto": "INDUMENTARIA",
+        "tipoProducto": "ROPA",
         "categorias": [
           {
             "id": 3,
@@ -917,7 +917,7 @@
           "sexo": "UNISEX",
           "precio_compra": 2500,
           "precio_venta": 5000,
-          "tipoProducto": "INDUMENTARIA",
+          "tipoProducto": "ROPA",
           "categorias": [
             {
               "id": 1,
@@ -999,7 +999,7 @@
           "sexo": "UNISEX",
           "precio_compra": 8000,
           "precio_venta": 15000,
-          "tipoProducto": "INDUMENTARIA",
+          "tipoProducto": "ROPA",
           "categorias": [
             {
               "id": 1,
@@ -1081,7 +1081,7 @@
           "sexo": "UNISEX",
           "precio_compra": 2500,
           "precio_venta": 5000,
-          "tipoProducto": "INDUMENTARIA",
+          "tipoProducto": "ROPA",
           "categorias": [
             {
               "id": 1,

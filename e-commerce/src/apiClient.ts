@@ -41,10 +41,10 @@ const mockProducts: IDetalleProducto[] = [
     producto: {
       id: 1,
       nombre: 'Remera Classic',
-      sexo: ISexo.MASCULINO,
+      sexo: ISexo.HOMBRE,
       precio_compra: 15,
       precio_venta: 29.99,
-      tipoProducto: ITipoProducto.INDUMENTARIA,
+      tipoProducto: ITipoProducto.ROPA,
       categorias: [{ id: 1, nombre: 'Remeras' }]
     },
     descuento: null,
@@ -64,10 +64,10 @@ const mockProducts: IDetalleProducto[] = [
     producto: {
       id: 2,
       nombre: 'Remera Sport',
-      sexo: ISexo.MASCULINO,
+      sexo: ISexo.HOMBRE,
       precio_compra: 18,
       precio_venta: 34.99,
-      tipoProducto: ITipoProducto.INDUMENTARIA,
+      tipoProducto: ITipoProducto.ROPA,
       categorias: [{ id: 1, nombre: 'Remeras' }, { id: 2, nombre: 'Deportiva' }]
     },
     descuento: {
@@ -93,10 +93,10 @@ const mockProducts: IDetalleProducto[] = [
     producto: {
       id: 3,
       nombre: 'Vestido Elegante',
-      sexo: ISexo.FEMENINO,
+      sexo: ISexo.MUJER,
       precio_compra: 45,
       precio_venta: 89.99,
-      tipoProducto: ITipoProducto.INDUMENTARIA,
+      tipoProducto: ITipoProducto.ROPA,
       categorias: [{ id: 3, nombre: 'Vestidos' }]
     },
     descuento: null,
@@ -146,10 +146,10 @@ const mockProducts: IDetalleProducto[] = [
     producto: {
       id: 5,
       nombre: 'Medias Spider-man',
-      sexo: ISexo.MASCULINO,
+      sexo: ISexo.HOMBRE,
       precio_compra: 25,
       precio_venta: 49.99,
-      tipoProducto: ITipoProducto.INDUMENTARIA,
+      tipoProducto: ITipoProducto.ROPA,
       categorias: [{ id: 5, nombre: 'Medias' }]
     },
     descuento: null,
